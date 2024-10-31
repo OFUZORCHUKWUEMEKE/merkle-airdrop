@@ -16,6 +16,7 @@ import {ScriptHelper} from "murky/script/common/ScriptHelper.sol";
 /** 
  * @title MakeMerkle
  * @author Ciara Nightingale
+ * @author Ofuzor Emeke
  * @author Cyfrin
  *
  * Original Work by:
@@ -92,7 +93,7 @@ contract MakeMerkle is Script, ScriptHelper {
                 } else if (compareStrings(types[j], "uint")) {
                     uint256 value = vm.parseUint(elements.readString(getValuesByIndex(i, j)));
                     data[j] = bytes32(value);
-                    input[j] = vm.toString(value);
+                    input[j] = vm.toString(value); 
                 }
             }
             // Create the hash for the merkle tree leaf node
